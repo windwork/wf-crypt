@@ -1,0 +1,19 @@
+{
+  "name" : "windwork/crypt",
+  "description" : "windwork crypt component",
+  "version" : "0.1.0",
+  "require" : {
+    "php" : ">=5.3.6"
+  },
+  "license" : "MIT",
+  "autoload" : {
+    "psr-4" : {
+      "wf\\crypt\\" : "."
+    }
+  },
+  "type" : "library",
+  "authors" : [ {
+    "name" : "Windwork Community",
+    "homepage" : "http://windwork.org"
+  } ]
+}
