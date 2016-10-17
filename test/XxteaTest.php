@@ -1,20 +1,20 @@
 <?php
-require_once __DIR__ . '/../ICrypt.php';
-require_once __DIR__ . '/../CryptFactory.php';
-require_once __DIR__ . '/AzDG.php';
+require_once '../ICrypt.php';
+require_once '../CryptFactory.php';
+require_once '../adapter/Xxtea.php';
 
-use \wf\crypt\adapter\AzDG;
+use \wf\crypt\adapter\Xxtea;
 
 /**
- * AzDG test case.
+ * Xxtea test case.
  */
-class AzDGTest extends PHPUnit_Framework_TestCase {
+class XxteaTest extends PHPUnit_Framework_TestCase {
 	
 	/**
 	 *
-	 * @var AzDG
+	 * @var Xxtea
 	 */
-	private $azDG;
+	private $xxtea;
 	
 	/**
 	 * Prepares the environment before running a test.
@@ -22,14 +22,17 @@ class AzDGTest extends PHPUnit_Framework_TestCase {
 	protected function setUp() {
 		parent::setUp ();
 		
-		$this->azDG = new AzDG(/* parameters */);
+		// TODO Auto-generated XxteaTest::setUp()
+		
+		$this->xxtea = new Xxtea(/* parameters */);
 	}
 	
 	/**
 	 * Cleans up the environment after running a test.
 	 */
 	protected function tearDown() {
-		$this->azDG = null;
+		// TODO Auto-generated XxteaTest::tearDown()
+		$this->xxtea = null;
 		
 		parent::tearDown ();
 	}
@@ -38,25 +41,26 @@ class AzDGTest extends PHPUnit_Framework_TestCase {
 	 * Constructs the test case.
 	 */
 	public function __construct() {
+		// TODO Auto-generated constructor
 	}
 	
 	/**
-	 * Tests AzDG->encrypt()
+	 * Tests Xxtea->encrypt()
 	 */
 	public function testEncrypt() {
 		$key = 'ssdsdsfdswe';
 		$txt = 'ojdsfojdsfo 交水电费 ds ds!';
-		$enc = $this->azDG->encrypt($txt, $key);
-		$dec = $this->azDG->decrypt($enc, $key);
+		$enc = $this->xxtea->encrypt($txt, $key);
+		$dec = $this->xxtea->decrypt($enc, $key);
 		
 		$this->assertEquals($txt, $dec);
 	}
 	
 	/**
-	 * Tests AzDG->decrypt()
+	 * Tests Xxtea->decrypt()
 	 */
 	public function testDecrypt() {
-		$crypt = \wf\crypt\CryptFactory::create('AzDG');
+		$crypt = \wf\crypt\CryptFactory::create('Xxtea');
 		
 		$key = 'ssdsdsfdswe';
 		$txt = 'ojdsfojdsfo 交水电费 ds ds!';
