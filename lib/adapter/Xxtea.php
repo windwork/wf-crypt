@@ -13,6 +13,13 @@ use \wf\crypt\Exception;
 
 /**
  * 基于xxtea加密算法实现
+ * 
+ * 算法作者：
+ * - David J. Wheeler
+ * - Roger M. Needham
+ * 
+ * 参考源码：
+ * Ma Bingyao <mabingyao@gmail.com> (https://github.com/xxtea/xxtea-php)
  *
  * @package     wf.crypt.adapter
  * @author      erzh <cmpan@qq.com>
@@ -115,11 +122,26 @@ class Xxtea implements \wf\crypt\ICrypt {
 	 */
 	private function long2str($v, $w) {
 		$len = count($v);
-		$s = array();
+		$n = $len << 2;
+		if ($w) {
+			$m = $v[$len - 1];
+			$n -= 4;
+			if (($m < $n - 3) || ($m > $n)) {
+				return false;
+			}
+			$n = $m;
+		}
+		
+		$s = [];
 		for ($i = 0; $i < $len; $i++) {
 			$s[$i] = pack("V", $v[$i]);
 		}
-		return $w ? substr(join('', $s), 0, $v[$len - 1]) : join('', $s);
+		
+		if ($w) {
+			return substr(join('', $s), 0, $n);
+		} else {
+			return join('', $s);
+		}
 	}
 
 	/**
@@ -145,15 +167,7 @@ class Xxtea implements \wf\crypt\ICrypt {
 	 * @return number
 	 */
 	private function int32($n) {
-		while ($n >= 2147483648) {
-			$n -= 4294967296;
-		}
-		
-		while ($n <= -2147483649) {
-			$n += 4294967296;
-		}
-		
-		return (int) $n;
+		return ($n & 0xffffffff);
 	}
 }
 

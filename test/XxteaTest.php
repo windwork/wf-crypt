@@ -1,7 +1,7 @@
 <?php
-require_once '../ICrypt.php';
-require_once '../CryptFactory.php';
-require_once '../adapter/Xxtea.php';
+require_once '../lib/ICrypt.php';
+require_once '../lib/CryptFactory.php';
+require_once '../lib/adapter/Xxtea.php';
 
 use \wf\crypt\adapter\Xxtea;
 
@@ -48,8 +48,8 @@ class XxteaTest extends PHPUnit_Framework_TestCase {
 	 * Tests Xxtea->encrypt()
 	 */
 	public function testEncrypt() {
-		$key = 'ssdsdsfdswe';
-		$txt = 'ojdsfojdsfo 交水电费 ds ds!';
+		$key = 'ssdsdsfdswessdsdsfdswessdsdsfdswe';
+		$txt = 'ojdsfojdsfo 交水电费 ds dsojdsfojdsfo 交水电费 ds dsojdsfojdsfo 交水电费 ds dsojdsfojdsfo 交水电费 ds dsojdsfojdsfo 交水电费 ds ds!';
 		$enc = $this->xxtea->encrypt($txt, $key);
 		$dec = $this->xxtea->decrypt($enc, $key);
 		
@@ -63,7 +63,7 @@ class XxteaTest extends PHPUnit_Framework_TestCase {
 		$crypt = \wf\crypt\CryptFactory::create('Xxtea');
 		
 		$key = 'ssdsdsfdswe';
-		$txt = 'ojdsfojdsfo 交水电费 ds ds!';
+		$txt = 'ojdsfojdsfo 交水电费 d水电费 d水电费 d水电费 d水电费 d水电费 ds ds!';
 		$enc = $crypt->encrypt($txt, $key);
 		$dec = $crypt->decrypt($enc, $key);
 		

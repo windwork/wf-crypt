@@ -1,17 +1,18 @@
 {
   "name" : "windwork/crypt",
   "description" : "windwork crypt component",
-  "version" : "1.0.0",
+  "type" : "library",
+  "keywords": ["crypt","encrypt","decrypt","XXTea","AzDG"],
+  "version" : "1.0.1",
   "require" : {
     "php" : ">=5.5.0"
   },
   "license" : "MIT",
   "autoload" : {
     "psr-4" : {
-      "wf\\crypt\\" : "."
+      "wf\\crypt\\" : "lib"
     }
   },
-  "type" : "library",
   "authors" : [ {
     "name" : "Windwork Community",
     "homepage" : "http://windwork.org"

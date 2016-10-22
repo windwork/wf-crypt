@@ -1,7 +1,7 @@
 <?php
-require_once '../ICrypt.php';
-require_once '../CryptFactory.php';
-require_once '../adapter/AzDG.php';
+require_once '../lib/ICrypt.php';
+require_once '../lib/CryptFactory.php';
+require_once '../lib/adapter/AzDG.php';
 
 use \wf\crypt\adapter\AzDG;
 
