@@ -4,10 +4,10 @@
  * 
  * 一个开源的PHP轻量级高效Web开发框架
  * 
- * @copyright   Copyright (c) 2008-2016 Windwork Team. (http://www.windwork.org)
- * @license     http://opensource.org/licenses/MIT	MIT License
+ * @copyright Copyright (c) 2008-2017 Windwork Team. (http://www.windwork.org)
+ * @license   http://opensource.org/licenses/MIT
  */
-namespace wf\crypt\adapter;
+namespace wf\crypt\strategy;
 
 use \wf\crypt\Exception;
 
@@ -21,17 +21,19 @@ use \wf\crypt\Exception;
  * 参考源码：
  * Ma Bingyao <mabingyao@gmail.com> (https://github.com/xxtea/xxtea-php)
  *
- * @package     wf.crypt.adapter
- * @author      erzh <cmpan@qq.com>
- * @link        http://www.windwork.org/manual/wf.crypt.html
+ * @package     wf.crypt.strategy
+ * @author      cm <cmpan@qq.com>
+ * @link        http://docs.windwork.org/manual/wf.crypt.html
  * @since       0.1.0
  */
-class Xxtea implements \wf\crypt\ICrypt {
+class Xxtea implements \wf\crypt\ICrypt 
+{
 	/**
 	 * (non-PHPdoc)
 	 * @see \wf\crypt\ICrypt::encrypt()
 	 */
-	public function encrypt($str, $key) {
+	public function encrypt($str, $key) 
+	{
 		if ($str == '') {
 			return '';
 		}
@@ -74,7 +76,8 @@ class Xxtea implements \wf\crypt\ICrypt {
 	 * (non-PHPdoc)
 	 * @see \wf\crypt\ICrypt::decrypt()
 	 */
-	public function decrypt($str, $key) {
+	public function decrypt($str, $key) 
+	{
 		if ($str == '') {
 			return '';
 		}
@@ -120,7 +123,8 @@ class Xxtea implements \wf\crypt\ICrypt {
 	 * @param boolean $w
 	 * @return string
 	 */
-	private function long2str($v, $w) {
+	private function long2str($v, $w) 
+	{
 		$len = count($v);
 		$n = $len << 2;
 		if ($w) {
@@ -151,7 +155,8 @@ class Xxtea implements \wf\crypt\ICrypt {
 	 * @param boolean $w
 	 * @return Ambigous <multitype:, number>
 	 */
-	private function str2long($s, $w) {
+	private function str2long($s, $w) 
+	{
 		$v = unpack("V*", $s . str_repeat("\0", (4 - strlen($s) % 4) & 3));
 		$v = array_values($v);
 		
@@ -166,7 +171,8 @@ class Xxtea implements \wf\crypt\ICrypt {
 	 * @param int $n
 	 * @return number
 	 */
-	private function int32($n) {
+	private function int32($n) 
+	{
 		return ($n & 0xffffffff);
 	}
 }

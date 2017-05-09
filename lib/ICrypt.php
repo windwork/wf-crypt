@@ -4,8 +4,8 @@
  * 
  * 一个开源的PHP轻量级高效Web开发框架
  * 
- * @copyright   Copyright (c) 2008-2016 Windwork Team. (http://www.windwork.org)
- * @license     http://opensource.org/licenses/MIT	MIT License
+ * @copyright Copyright (c) 2008-2017 Windwork Team. (http://www.windwork.org)
+ * @license   http://opensource.org/licenses/MIT
  */
 namespace wf\crypt;
 
@@ -13,11 +13,12 @@ namespace wf\crypt;
  * 可逆加密接口
  * 
  * @package     wf.crypt
- * @author      erzh <cmpan@qq.com>
- * @link        http://www.windwork.org/manual/wf.crypt.html
+ * @author      cm <cmpan@qq.com>
+ * @link        http://docs.windwork.org/manual/wf.crypt.html
  * @since       0.1.0
  */
-interface ICrypt {
+interface ICrypt 
+{
 	/**
 	 * 加密，原字串经过私有密匙加密
 	 *

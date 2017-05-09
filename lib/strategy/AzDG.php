@@ -4,22 +4,23 @@
  * 
  * 一个开源的PHP轻量级高效Web开发框架
  * 
- * @copyright   Copyright (c) 2008-2016 Windwork Team. (http://www.windwork.org)
- * @license     http://opensource.org/licenses/MIT	MIT License
+ * @copyright Copyright (c) 2008-2017 Windwork Team. (http://www.windwork.org)
+ * @license   http://opensource.org/licenses/MIT
  */
-namespace wf\crypt\adapter;
+namespace wf\crypt\strategy;
 
 /**
  * 可逆对称加密解密
  * 极高效的对称加密算法
  * 参考Discuz! Passport采用的Azerbaijan Development Group（AzDG）开发的可逆加密算法
  *   
- * @package     wf.crypt.adapter
- * @author      erzh <cmpan@qq.com>
- * @link        http://www.windwork.org/manual/wf.crypt.html
+ * @package     wf.crypt.strategy
+ * @author      cm <cmpan@qq.com>
+ * @link        http://docs.windwork.org/manual/wf.crypt.html
  * @since       0.1.0
  */
-class AzDG implements \wf\crypt\ICrypt {
+class AzDG implements \wf\crypt\ICrypt 
+{
 	/**
 	 * 加密
 	 *
@@ -28,7 +29,8 @@ class AzDG implements \wf\crypt\ICrypt {
 	 *
 	 * @return string 原字串经过私有密匙加密后的结果
 	 */
-	public function encrypt($txt, $key) {
+	public function encrypt($txt, $key) 
+	{
 		// 使用随机数发生器产生 0~32000 的值并 MD5()
 		srand((double)microtime() * 1000000);
 		$encryptKey = md5(rand(0, 32000));
@@ -58,7 +60,8 @@ class AzDG implements \wf\crypt\ICrypt {
 	 *
 	 * @return string 字串经过私有密匙解密后的结果
 	 */
-	public function decrypt($txt, $key) {
+	public function decrypt($txt, $key) 
+	{
 		// $txt 的结果为加密后的字串经过 base64 解码，然后与私有密匙一起，
 		// 经过 self::key() 函数处理后的返回值
 		$txt = self::key(base64_decode($txt), $key);
@@ -85,7 +88,8 @@ class AzDG implements \wf\crypt\ICrypt {
 	 *
 	 * @return string 处理后的密匙
 	 */
-	private static function key($txt, $encryptKey) {
+	private static function key($txt, $encryptKey) 
+	{
 		// 将 $encryptKey 赋为 $encryptKey 经 md5() 后的值
 		$encryptKey = md5($encryptKey);
 

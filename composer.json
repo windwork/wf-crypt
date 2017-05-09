@@ -3,7 +3,7 @@
   "description" : "windwork crypt component",
   "type" : "library",
   "keywords": ["crypt","encrypt","decrypt","XXTea","AzDG"],
-  "version" : "1.0.1",
+  "version" : "1.0.2",
   "require" : {
     "php" : ">=5.5.0"
   },

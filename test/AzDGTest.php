@@ -1,14 +1,14 @@
 <?php
 require_once '../lib/ICrypt.php';
-require_once '../lib/CryptFactory.php';
-require_once '../lib/adapter/AzDG.php';
+require_once '../lib/strategy/AzDG.php';
 
-use \wf\crypt\adapter\AzDG;
+use \wf\crypt\strategy\AzDG;
 
 /**
  * AzDG test case.
  */
-class AzDGTest extends PHPUnit_Framework_TestCase {
+class AzDGTest extends PHPUnit_Framework_TestCase 
+{
 	
 	/**
 	 *
@@ -19,7 +19,8 @@ class AzDGTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * Prepares the environment before running a test.
 	 */
-	protected function setUp() {
+	protected function setUp() 
+	{
 		parent::setUp ();
 		
 		$this->azDG = new AzDG(/* parameters */);
@@ -28,7 +29,8 @@ class AzDGTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * Cleans up the environment after running a test.
 	 */
-	protected function tearDown() {
+	protected function tearDown() 
+	{
 		$this->azDG = null;
 		
 		parent::tearDown ();
@@ -37,13 +39,15 @@ class AzDGTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * Constructs the test case.
 	 */
-	public function __construct() {
+	public function __construct() 
+	{
 	}
 	
 	/**
 	 * Tests AzDG->encrypt()
 	 */
-	public function testEncrypt() {
+	public function testEncrypt() 
+	{
 		$key = 'ssdsdsfdswe';
 		$txt = 'ojdsfojdsfo 交水电费 ds ds!';
 		$enc = $this->azDG->encrypt($txt, $key);
@@ -55,8 +59,9 @@ class AzDGTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * Tests AzDG->decrypt()
 	 */
-	public function testDecrypt() {
-		$crypt = \wf\crypt\CryptFactory::create('AzDG');
+	public function testDecrypt() 
+	{
+		$crypt = new \wf\crypt\strategy\AzDG();
 		
 		$key = 'ssdsdsfdswe';
 		$txt = 'ojdsfojdsfo 交水电费 ds ds!';

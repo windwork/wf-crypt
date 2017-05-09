@@ -1,14 +1,14 @@
 <?php
 require_once '../lib/ICrypt.php';
-require_once '../lib/CryptFactory.php';
-require_once '../lib/adapter/Xxtea.php';
+require_once '../lib/strategy/Xxtea.php';
 
-use \wf\crypt\adapter\Xxtea;
+use \wf\crypt\strategy\Xxtea;
 
 /**
  * Xxtea test case.
  */
-class XxteaTest extends PHPUnit_Framework_TestCase {
+class XxteaTest extends PHPUnit_Framework_TestCase 
+{
 	
 	/**
 	 *
@@ -19,7 +19,8 @@ class XxteaTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * Prepares the environment before running a test.
 	 */
-	protected function setUp() {
+	protected function setUp() 
+	{
 		parent::setUp ();
 		
 		// TODO Auto-generated XxteaTest::setUp()
@@ -30,7 +31,8 @@ class XxteaTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * Cleans up the environment after running a test.
 	 */
-	protected function tearDown() {
+	protected function tearDown() 
+	{
 		// TODO Auto-generated XxteaTest::tearDown()
 		$this->xxtea = null;
 		
@@ -40,14 +42,16 @@ class XxteaTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * Constructs the test case.
 	 */
-	public function __construct() {
+	public function __construct() 
+	{
 		// TODO Auto-generated constructor
 	}
 	
 	/**
 	 * Tests Xxtea->encrypt()
 	 */
-	public function testEncrypt() {
+	public function testEncrypt() 
+	{
 		$key = 'ssdsdsfdswessdsdsfdswessdsdsfdswe';
 		$txt = 'ojdsfojdsfo 交水电费 ds dsojdsfojdsfo 交水电费 ds dsojdsfojdsfo 交水电费 ds dsojdsfojdsfo 交水电费 ds dsojdsfojdsfo 交水电费 ds ds!';
 		$enc = $this->xxtea->encrypt($txt, $key);
@@ -59,8 +63,9 @@ class XxteaTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * Tests Xxtea->decrypt()
 	 */
-	public function testDecrypt() {
-		$crypt = \wf\crypt\CryptFactory::create('Xxtea');
+	public function testDecrypt() 
+	{
+		$crypt = new \wf\crypt\strategy\Xxtea('Xxtea');
 		
 		$key = 'ssdsdsfdswe';
 		$txt = 'ojdsfojdsfo 交水电费 d水电费 d水电费 d水电费 d水电费 d水电费 ds ds!';
