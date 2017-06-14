@@ -74,7 +74,7 @@ class Xxtea implements \wf\crypt\CryptInterface
 	}
 	/**
 	 * (non-PHPdoc)
-	 * @see \wf\crypt\ICrypt::decrypt()
+	 * @see \wf\crypt\CryptInterface::decrypt()
 	 */
 	public function decrypt($str, $key) 
 	{

@@ -1,5 +1,5 @@
 <?php
-require_once '../lib/ICrypt.php';
+require_once '../lib/CryptInterface.php';
 require_once '../lib/strategy/AzDG.php';
 
 use \wf\crypt\strategy\AzDG;
