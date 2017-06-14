@@ -17,7 +17,7 @@ namespace wf\crypt;
  * @link        http://docs.windwork.org/manual/wf.crypt.html
  * @since       0.1.0
  */
-interface ICrypt 
+interface CryptInterface
 {
 	/**
 	 * 加密，原字串经过私有密匙加密

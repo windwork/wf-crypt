@@ -26,11 +26,11 @@ use \wf\crypt\Exception;
  * @link        http://docs.windwork.org/manual/wf.crypt.html
  * @since       0.1.0
  */
-class Xxtea implements \wf\crypt\ICrypt 
+class Xxtea implements \wf\crypt\CryptInterface 
 {
 	/**
 	 * (non-PHPdoc)
-	 * @see \wf\crypt\ICrypt::encrypt()
+	 * @see \wf\crypt\CryptInterface::encrypt()
 	 */
 	public function encrypt($str, $key) 
 	{

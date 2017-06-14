@@ -26,7 +26,7 @@ $cfg = [
 $crypt = $cfg['class']($cfg);
 
 // 4、在Windwork框架中使用
-$crypt = di()->crypt();
+$crypt = crypt();
 
 ```
 

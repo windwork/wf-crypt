@@ -19,7 +19,7 @@ namespace wf\crypt\strategy;
  * @link        http://docs.windwork.org/manual/wf.crypt.html
  * @since       0.1.0
  */
-class AzDG implements \wf\crypt\ICrypt 
+class AzDG implements \wf\crypt\CryptInterface 
 {
 	/**
 	 * 加密
