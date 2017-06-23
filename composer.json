@@ -9,7 +9,7 @@
 		"XXTea",
 		"AzDG"
 	],
-	"version" : "0.5.1",
+	"version" : "1.0.3",
 	"require" : {
 		"php" : ">=5.5.0"
 	},
@@ -23,5 +23,6 @@
 			"name" : "Windwork Community",
 			"homepage" : "http://windwork.org"
 		}
-	]
+	],
+	"minimum-stability" : "alpha"
 }
