@@ -9,8 +9,6 @@
  */
 namespace wf\crypt\strategy;
 
-use \wf\crypt\Exception;
-
 /**
  * 基于xxtea加密算法实现
  * 
@@ -39,7 +37,7 @@ class Xxtea implements \wf\crypt\CryptInterface
 		}
 		
 		if (!$key || !is_string($key)) {
-			throw new Exception('[wf\\crypt\\Xxtea::encrypt] param 2 ($key) is required.');
+		    throw new \wf\crypt\Exception('[wf\\crypt\\Xxtea::encrypt] param 2 ($key) is required.');
 		}
 		
 		$v = $this->str2long($str, true);
@@ -83,7 +81,7 @@ class Xxtea implements \wf\crypt\CryptInterface
 		}
 		
 		if (!$key || !is_string($key)) {
-			throw new Exception('[wf\\crypt\\Xxtea::decrypt] param 2 ($key) is required.');
+		    throw new \wf\crypt\Exception('[wf\\crypt\\Xxtea::decrypt] param 2 ($key) is required.');
 		}
 		$v = $this->str2long($str, false);
 		$k = $this->str2long($key, false);
