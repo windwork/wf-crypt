@@ -1,8 +1,8 @@
 <?php
 require_once '../lib/CryptInterface.php';
-require_once '../lib/strategy/Xxtea.php';
+require_once '../lib/adapter/Xxtea.php';
 
-use \wf\crypt\strategy\Xxtea;
+use \wf\crypt\adapter\Xxtea;
 
 /**
  * Xxtea test case.
@@ -65,7 +65,7 @@ class XxteaTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testDecrypt() 
 	{
-		$crypt = new \wf\crypt\strategy\Xxtea('Xxtea');
+		$crypt = new \wf\crypt\adapter\Xxtea('Xxtea');
 		
 		$key = 'ssdsdsfdswe';
 		$txt = 'ojdsfojdsfo 交水电费 d水电费 d水电费 d水电费 d水电费 d水电费 ds ds!';

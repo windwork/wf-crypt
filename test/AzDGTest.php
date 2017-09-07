@@ -1,8 +1,8 @@
 <?php
 require_once '../lib/CryptInterface.php';
-require_once '../lib/strategy/AzDG.php';
+require_once '../lib/adapter/AzDG.php';
 
-use \wf\crypt\strategy\AzDG;
+use \wf\crypt\adapter\AzDG;
 
 /**
  * AzDG test case.
@@ -61,7 +61,7 @@ class AzDGTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testDecrypt() 
 	{
-		$crypt = new \wf\crypt\strategy\AzDG();
+		$crypt = new \wf\crypt\adapter\AzDG();
 		
 		$key = 'ssdsdsfdswe';
 		$txt = 'ojdsfojdsfo 交水电费 ds ds!';

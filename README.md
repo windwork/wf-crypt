@@ -9,18 +9,18 @@ $key = '秘钥';
 $txt = '明文~';
 
 // 1、使用AzDG算法加密解密
-$crypt = new \wf\crypt\strategy\AzDG();  
+$crypt = new \wf\crypt\adapter\AzDG();  
 $enc = $crypt->encrypt($txt, $key); // 加密
 $dec = $crypt->decrypt($enc, $key); // 解密
 
 // 2、使用Xxtea算法加密解密
-$crypt = \wf\crypt\strategy\Xxtea();
+$crypt = \wf\crypt\adapter\Xxtea();
 $enc = $crypt->encrypt($txt, $key); // 加密
 $dec = $crypt->decrypt($enc, $key); // 解密
 
 // 3、通过配置文件选择使用加密方式
 $cfg = [
-    'class' => '\\wf\\crypt\\strategy\\AzDG',
+    'class' => '\\wf\\crypt\\adapter\\AzDG',
     'key' => 'value',
 ];
 $crypt = $cfg['class']($cfg);

@@ -7,14 +7,14 @@
  * @copyright Copyright (c) 2008-2017 Windwork Team. (http://www.windwork.org)
  * @license   http://opensource.org/licenses/MIT
  */
-namespace wf\crypt\strategy;
+namespace wf\crypt\adapter;
 
 /**
  * 可逆对称加密解密
  * 极高效的对称加密算法
  * 参考Discuz! Passport采用的Azerbaijan Development Group（AzDG）开发的可逆加密算法
  *   
- * @package     wf.crypt.strategy
+ * @package     wf.crypt.adapter
  * @author      cm <cmpan@qq.com>
  * @link        http://docs.windwork.org/manual/wf.crypt.html
  * @since       0.1.0

@@ -7,7 +7,7 @@
  * @copyright Copyright (c) 2008-2017 Windwork Team. (http://www.windwork.org)
  * @license   http://opensource.org/licenses/MIT
  */
-namespace wf\crypt\strategy;
+namespace wf\crypt\adapter;
 
 /**
  * 基于xxtea加密算法实现
@@ -19,7 +19,7 @@ namespace wf\crypt\strategy;
  * 参考源码：
  * Ma Bingyao <mabingyao@gmail.com> (https://github.com/xxtea/xxtea-php)
  *
- * @package     wf.crypt.strategy
+ * @package     wf.crypt.adapter
  * @author      cm <cmpan@qq.com>
  * @link        http://docs.windwork.org/manual/wf.crypt.html
  * @since       0.1.0
